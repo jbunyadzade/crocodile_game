@@ -8,8 +8,10 @@ const config = {
 	kit: {
 		appDir: 'app',
 		adapter: adapter({
-      fallback: 'index.html'
-    }),
+			// because we're deploying to GitHub Pages and have no way to configure the server to serve index.html for all routes,
+			// we need to use this little hack to make sure that the app works when the user refreshes the page or tries to access a route directly.
+			fallback: '404.html'
+		}),
 		paths: {
 			base: dev ? '' : process.env.BASE_PATH
 		}
