@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  # name of the repository, used in the path to the artifact, without the author name
+  BASE_PATH: '/crocodile_game'
+
 permissions:
   contents: read
   pages: write
